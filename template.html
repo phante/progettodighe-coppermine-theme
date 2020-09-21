@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="{LANG_DIR}" lang="{LANG}">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={CHARSET}" />
+<meta http-equiv="Pragma" content="no-cache" />
+<title>{TITLE}</title>
+<meta name="description" content="{GAL_DESCRIPTION}" />
+{META}
+<link rel="stylesheet" href="css/coppermine.css" type="text/css" />
+<link rel="stylesheet" href="themes/progettodighe/style.css" type="text/css" />
+<link rel="shortcut icon" href="http://www.progettodighe.it/favicon.ico" />
+<!--[if IE]>
+<link rel="stylesheet" href="themes/progettodighe/style-IE.css" type="text/css" media="all" />
+<![endif]-->
+<!--[if gte IE 7]>
+<link rel="stylesheet" href="themes/progettodighe/style-IE7+.css" type="text/css" media="all" />
+<![endif]-->
+
+<!-- Begin IE6 support -->
+<!--[if lt IE 7]>
+<style>
+body {behavior: url(themes/curve/csshover3.htc );}
+.dropmenu li {width: 1px;} .dropmenu li a.firstlevel span.firstlevel {white-space: nowrap;} .main_menu {overflow: auto;}
+</style>
+<![endif]-->
+<!-- End IE6 support -->
+{JAVASCRIPT}
+
+<script>
+// Set to the same value as the web property used on the site
+var gaProperty = 'UA-301349-1';
+
+// Disable tracking if the opt-out cookie exists.
+var disableStr = 'ga-disable-' + gaProperty;
+if (document.cookie.indexOf(disableStr + '=true') > -1) {
+  window[disableStr] = true;
+}
+
+// Opt-out function
+function gaOptout() {
+  document.cookie = disableStr + '=true; expires=Thu, 31 Dec 2099 23:59:59 UTC; path=/';
+  window[disableStr] = true;
+}
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-301349-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</head>
+<body>
+    {CUSTOM_HEADER}
+
+    <script src="https://www.progettodighe.it/js/cookiechoices.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function(event) {
+    cookieChoices.showCookieConsentDialog('Questo sito utilizza cookie tecnici propri ' +
+      'e cookie di terze parti (tecnici e di profilazione) per migliorare la tua ' +
+      'esperienza di navigazione e fornirti un servizio in linea con le tue preferenze. ' +
+      'Cliccando su Accetta oppure accedendo ad un qualunque elemento sottostante ' +
+      'a questo banner acconsenti all’utilizzo dei cookie.',
+      'Accetto',
+      'Informativa completa', 'http://www.progettodighe.it/main/noi/article/informativa-estesa-cookie-policy');
+  });
+</script>
+<div id="layer">
+	<div id="tl"></div>
+	<div id="tr"></div>
+  	<div id="bl"></div>
+  	<div id="br"></div>
+
+	<div id="header">
+		<div id="title">
+			<img id="title_logo" src="../images/logo.jpg" alt="" width="140px" height="150px"/>
+			<h1 id="title_main">{GAL_NAME}</h1>
+			<div id="title_descr"><p>{GAL_DESCRIPTION}<p></div><!-- div title_descr -->
+
+			<div id="title_googlesearch_box">
+				<div id="title_googlesearch_corner">
+				</div><!-- div title_googlesearch_corner -->
+				<div id="title_googlesearch">
+					<form action="https://www.google.it/cse" id="cse-search-box">
+				  		<div>
+				    		<input type="hidden" name="cx" value="partner-pub-8950289255447363:fg9jhk-bdw9" />
+				   	 		<input type="hidden" name="ie" value="ISO-8859-1" />
+				    		<input type="text" name="q" size="31" />
+				    		<input type="submit" name="sa" value="Cerca" />
+				  		</div>
+					</form>
+					<script type="text/javascript" src="https://www.google.com/coop/cse/brand?form=cse-search-box&amp;lang=it"></script>
+				</div><!-- div title_googlesearch -->
+			</div><!-- div title_googlesearch_box -->
+		</div><!-- div title -->
+
+		<div id="mainmenu">
+			<ul class="glossymenu">
+				<li><a href="../main"><b>Home</b></a></li>
+				<li><a href="../main/le-dighe/"><b>Le dighe</b></a></li>
+				<li><a href="../main/le-centrali/"><b>Le centrali</b></a></li>
+				<li><a href="../main/tecnica/"><b>Tecnica</b></a></li>
+				<li><a href="../main/reportage/"><b>Reportage</b></a></li>
+				<li><a href="../main/noi/"><b>Noi</b></a></li>
+				<li><a href="../main/risorse/"><b>Risorse</b></a></li>
+				<li><a href="../forum"><b>Forum</b></a></li>
+				<li class="active"><a href="../gallery"><b>Gallery</b></a></li>
+				<li><a href="../skydam"><b>SKYdam</b></a></li>
+				<li><a href="http://progettodighe.spreadshirt.it"><b>Shop</b></a></li>
+			</ul>
+		</div><!-- div mainmenu -->
+		<div id="language_selection">&nbsp;</div>
+	</div><!-- div header -->
+
+	<div id="contents">
+		<div id="colonna_principale">
+			<div id="corpo-colonna_principale">
+			    <div id="cpg_header_block_outer">
+			        <div class="cpg_header_block_inner">
+			            <div id="main_menu">
+			                    {SYS_MENU}
+			                    {SUB_MENU}
+			                    {ADMIN_MENU}
+			            </div><!-- Begin IE7 support --><img src="images/spacer.gif" class="menuheight" alt="" /><!-- End IE7 support -->
+			            <div class="clearer"></div>
+			            {MESSAGE_BLOCK}
+			        </div>
+			    </div>
+			    <div id="cpg_main_block_outer">
+			        <div class="cpg_main_block_inner">
+			            {GALLERY}
+			            <br /> <!-- workaround for issue 64492 - do not remove the line break! -->
+			        </div>
+			    </div>
+			</div><!-- div corpo-colonna_principale -->
+		</div><!-- div colonna_principale -->
+    </div><!-- div contents -->
+
+	<div id="footer">
+		<div id="footer_text">
+			{CUSTOM_FOOTER}
+            {CREDITS}
+		</div><!-- div footer_text -->
+	</div> <!-- div footer -->
+</div><!-- div layer  -->
+</body>
+</html>
