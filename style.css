@@ -1078,11 +1078,6 @@ a:hover.rounded_menu span {
 	text-align: center;
 }
 
-/* Elementi degli angoli, invisibili di default attivi solo per IE */
-#tr, #tl, #br, #bl {
-	visibility:hidden;
-}
-
 /****************************
 	Elementi header 
 ****************************/
