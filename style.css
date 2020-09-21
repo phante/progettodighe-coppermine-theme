@@ -134,7 +134,7 @@ pre.filepath {
 
 .button, .admin_menu {
     color: white;
-    background-color:#5A6C85;    
+    background-color:#5A6C85;
     border: 1px solid #5A6C85;
     cursor:pointer;
     padding-left:0px;
@@ -142,6 +142,7 @@ pre.filepath {
     margin-right:2px;
     -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
+    border-radius: 5px;
 }
 
 .button {

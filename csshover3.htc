@@ -1,28 +1,11 @@
 <public:attach event="ondocumentready" onevent="CSSHover()" />
 <script>
-/*************************
-  Coppermine Photo Gallery
-  ************************
-  Copyright (c) 2003-2010 Coppermine Dev Team
-  v1.0 originally written by Gregory Demar
-
-  This program is free software; you can redistribute it and/or modify
-  it under the terms of the GNU General Public License version 3
-  as published by the Free Software Foundation.
-
-  ********************************************
-  Coppermine version: 1.5.4
-  $HeadURL: https://coppermine.svn.sourceforge.net/svnroot/coppermine/trunk/cpg1.5.x/themes/curve/csshover3.htc $
-  $Revision: 7577 $
-
-  $Date: 2010-05-26 14:30:55 +0200 (Mi, 26 Mai 2010) $
-**********************************************/
 
 /**
- * Whatever:hover - V3.11
- * http://www.xs4all.nl/~peterned/
+ * Whatever:progettodighe - V1.00
+ * http://www.progettodighe.it
  *	
- * Copyright (c) 2009 Peter Nederlof
+ * Copyright (c) 2020 Elvis Del Tedesco
  * Licensed under the LGPL license
  * http://creativecommons.org/licenses/LGPL/2.1
  */
