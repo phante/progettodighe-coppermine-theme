@@ -367,7 +367,7 @@ function starttable($width = '-1', $title = '', $title_colspan = '1', $zebra_cla
     if ($width == '100%') $width = $CONFIG['main_table_width'];
     $text = <<<EOT
 
-<!-- Start standard table -->
+<!-- thumb_celld table -->
 <table align="center" width="$width" cellspacing="1" cellpadding="0" class="maintable $zebra_class">
 
 EOT;
@@ -397,25 +397,20 @@ EOT;
 ******************************************************************************/
 // HTML template for filmstrip display
 $template_film_strip = <<<EOT
-
         <tr>
-          <td style="background-image: url({TILE1});background-repeat:repeat-x;"><img src="images/spacer.gif" width="1" height="28" alt="" border="0" /></td>
-        </tr>
-        <tr>
-          <td valign="bottom" class="thumbnails filmstrip_background" align="center" style="{THUMB_TD_STYLE}">
-            <table width="100%" cellspacing="0" cellpadding="0" border="0">
-                <tr>
-                   <td width="50%" class="prev_strip"></td>
-                     <td valign="bottom"  style="{THUMB_TD_STYLE}">
-                       <div id="film" style="{SET_WIDTH}"><table class="tape" ><tr>{THUMB_STRIP}</tr></table></div>
-                     </td>
-                   <td width="50%" align="right" class="next_strip"></td>
-                </tr>
-            </table>
+          <td>
+            <div class="bg-black-20 br20">
+                <table width="100%" cellspacing="0" cellpadding="0" border="0">
+                    <tr>
+                        <td width="50%" class="prev_strip"></td>
+                        <td valign="bottom"  style="{THUMB_TD_STYLE}">
+                            <div id="film" style="{SET_WIDTH}"><table class="tape" ><tr>{THUMB_STRIP}</tr></table></div>
+                        </td>
+                        <td width="50%" align="right" class="next_strip"></td>
+                    </tr>
+                </table>
+            </div>    
           </td>
-        </tr>
-        <tr>
-         <td style="background-image: url({TILE2});background-repeat:repeat-x;"><img src="images/spacer.gif" width="1" height="28" alt="" border="0" /></td>
         </tr>
 <!-- BEGIN thumb_cell -->
                 <td class="thumb" >
