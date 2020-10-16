@@ -7,11 +7,14 @@
 	<meta charset="{CHARSET}">
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="https://www.progettodighe.it/favicon.ico" />
+	<link rel="shortcut icon" href="https://www.progettodighe.it/favicon.ico">
 	{META}
-	<link rel="stylesheet" href="css/coppermine.css" type="text/css" />
-	<link rel="stylesheet" href="{THEME_DIR}asset/css/style.css" type="text/css" />
-	<link rel="stylesheet" href="{THEME_DIR}asset/css/tachyons.css" type="text/css" />
+    <link rel="stylesheet" href="css/coppermine.css" type="text/css">
+    <link rel="stylesheet" href="{THEME_DIR}style.css" type="text/css">
+    <link rel="stylesheet" href="{THEME_DIR}asset/css/tachyons.css" type="text/css">
+    <!--
+        img max-width 100% spacca thumbtail su elenco album
+    -->
 
 	<!-- Preconnessione per ottimizzazione caricamento -->
 	<link rel="preconnect" href="https://www.google-analytics.com">
@@ -38,94 +41,83 @@
 	<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
 	<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
-
 <body class="w100 sans-serif bg-white black-80">
-	<main class="w-100">
-		<section class="w-100">
-			<header class="mw8 mt3-ns pa1 center">
-				<div class="flex flex-wrap">
-					<div class="w-30 w-20-ns">
-						<a class="link" href="../main/" title="Home"><img class="db h-auto" src="{THEME_DIR}asset/brand/PDLogo.svg" alt="ProgettoDighe Logo" width="150px" height="150px"></a>
-					</div>
-					<div class="w-70 w-80-ns pa2">
-						<div class="mt1">
-							<a class="db f3 f1-ns lh-title fw6 mt0 mb1 link black-80" href="#URL_SITE_SPIP" title="Home" >{GAL_NAME}</a>
-							<small class="db f6 f4-ns lh-copy tj">{GAL_DESCRIPTION}</small>
-						</div>
-					</div>
-				</div>
+    {CUSTOM_HEADER}
 
-				<nav class="bt bb tc mt2 mb2">
-					<a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Le dighe" href="../main/le-dighe/">Le dighe</a>
-					<a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Le centrali" href="../main/le-centrali(">Le centrali</a>
-					<a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Tecnica" href="../main/tecnica/">Tecnica</a>
-					<a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Reportage" href="../main/reportage/">Reportage</a>
-					<a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Noi" href="../main/noi/">Noi</a>
-					<a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Risorse" href="../main/risorse/">Risorse</a>
-					<a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Forum" href="../forum">Forum</a>
-					<a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Gallery" href="">Gallery</a>
-				</nav>
-			</header>
+    <header class="mw8 mt3-ns pa1 center">
+        <div class="flex flex-wrap">
+            <div class="w-30 w-20-ns">
+                <a class="link" href="../main/" title="Home"><img class="db h-auto" src="{THEME_DIR}asset/brand/PDLogo.svg" alt="ProgettoDighe Logo" width="150px" height="150px"></a>
+            </div>
+            <div class="w-70 w-80-ns pa2">
+                <div class="mt1">
+                    <a class="db f3 f1-ns lh-title fw6 mt0 mb1 link black-80" href="#URL_SITE_SPIP" title="Home" >{GAL_NAME}</a>
+                    <small class="db f6 f4-ns lh-copy tj">{GAL_DESCRIPTION}</small>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bt bb tc mt2 mb2">
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Le dighe" href="../main/le-dighe/">Le dighe</a>
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Le centrali" href="../main/le-centrali(">Le centrali</a>
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Tecnica" href="../main/tecnica/">Tecnica</a>
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Reportage" href="../main/reportage/">Reportage</a>
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Noi" href="../main/noi/">Noi</a>
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Risorse" href="../main/risorse/">Risorse</a>
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Forum" href="../forum">Forum</a>
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l" title="Gallery" href="">Gallery</a>
+        </nav>
+        <nav class="pa3">
+            {SYS_MENU}
+            {SUB_MENU}
+            {ADMIN_MENU}
+        </nav>
+        <div class="pa3">
+            {MESSAGE_BLOCK}
+        </div>
+    </header>
+
+    <main class="mw8 pa1 center">
+		<section class="">
+			{GALLERY}
+   			<br /> <!-- workaround for issue 64492 - do not remove the line break! -->
 		</section>
-
-		<section class="w-100">
-			<div class="ph3 pv2">
-				<div class="mw8 center">
-					<div id="cpg_header_block_outer">
-						<div class="cpg_header_block_inner">
-							<div id="main_menu">
-								{SYS_MENU}
-								{SUB_MENU}
-								{ADMIN_MENU}
-							</div>
-							<div class="clearer"></div>
-							{MESSAGE_BLOCK}
-						</div>
-					</div>
-					<div id="cpg_main_block_outer">
-						<div class="cpg_main_block_inner">
-							{GALLERY}
-							<br /> <!-- workaround for issue 64492 - do not remove the line break! -->
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<footer class="pa4 pa5-l black-70 bt b--black-10">
-			{CUSTOM_FOOTER}
-			<h1 class="w-100 pv0 f5 fw6 ttu tracked mb4">Mantenuto e gestito da Elvis Del Tedesco e dalla comunit&agrave; di ProgettoDighe dal 2005</h1>
-			<a class="black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l" href="mailto:info@progettodighe.it" >info@progettodighe.it</a>  
-		
-			<div class="dt dt--fixed w-100" >
-				<div class="dn dtc-ns v-mid">
-					<p class="f6 black-70 dib pr3 mb3" xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" >
-						Eccetto dove specificamente indicato questo sito è licenziato sotto <a class="link" rel="license"
-						href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<img
-							style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-							src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img
-							style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-							src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img
-							style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
-							src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" /></a>
-					</p>
-				</div>
-				<div class="db dtc-ns black-70 tc tr-ns v-mid f2">
-					<a class="link near-black hover-silver dib h2 w2 mr3" href="https://www.facebook.com/progettodighe" title="Facebook">
-						<i class="fab fa-facebook-square"></i>
-					</a>
-					<a class="link hover-silver near-black dib h2 w2 mr3" href="https://www.instagram.com/progettodighe.it/" title="Instagram">
-						<i class="fab fa-instagram"></i>
-					</a>
-					<a class="link hover-silver near-black dib h2 w2 mr3" href="https://www.youtube.com/user/progettodighe" title="youtube">
-						<i class="fab fa-youtube"></i>
-					</a>
-					<a class="link hover-silver near-black dib h2 w2 mr3" href="#URL_PAGE{backend}" title="RSS">
-						<i class="fas fa-rss"></i>
-					</a>
-				</div>
-			</div>	
-		</footer>
 	</main>
+
+    <footer class="pa4 pa5-l black-70 bt b--black-10">
+        {CUSTOM_FOOTER}
+        {CREDITS}
+        <h1 class="w-100 pv0 f5 fw6 ttu tracked mb4">Mantenuto e gestito da Elvis Del Tedesco e dalla comunit&agrave; di ProgettoDighe dal 2005</h1>
+        <a class="black-70 f3 f2-ns fw6 tl link dim dib pv3 mt2 mb4 mb0-l" href="mailto:info@progettodighe.it" >info@progettodighe.it</a>  
+    
+        <div class="dt dt--fixed w-100" >
+            <div class="dn dtc-ns v-mid">
+                <p class="f6 black-70 dib pr3 mb3" xmlns:dct="http://purl.org/dc/terms/" xmlns:cc="http://creativecommons.org/ns#" >
+                    Eccetto dove specificamente indicato questo sito è licenziato sotto <a class="link" rel="license"
+                    href="https://creativecommons.org/licenses/by-sa/4.0">CC BY-SA 4.0<img
+                        style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                        src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" /><img
+                        style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                        src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" /><img
+                        style="height:22px!important;margin-left:3px;vertical-align:text-bottom;"
+                        src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" /></a>
+                </p>
+            </div>
+            <div class="db dtc-ns black-70 tc tr-ns v-mid f2">
+                <a class="link near-black hover-silver dib h2 w2 mr3" href="https://www.facebook.com/progettodighe" title="Facebook">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+                <a class="link hover-silver near-black dib h2 w2 mr3" href="https://www.instagram.com/progettodighe.it/" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a class="link hover-silver near-black dib h2 w2 mr3" href="https://www.youtube.com/user/progettodighe" title="youtube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a class="link hover-silver near-black dib h2 w2 mr3" href="#URL_PAGE{backend}" title="RSS">
+                    <i class="fas fa-rss"></i>
+                </a>
+            </div>
+        </div>	
+    </footer>
 </body>
 </html>
