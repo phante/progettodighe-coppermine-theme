@@ -1,3 +1,6 @@
+/*
+Risolve incompatibilità con tachyon su miniatura album
+*/
 img.image.thumbnail {
     max-width: none;
 }
@@ -74,12 +77,6 @@ img.image.thumbnail {
     margin-top: 5px;
 }
 
-.menuheight {      /* IE7 */
-    width: 1px;    /* IE7 */
-    height: 95px;  /* IE7 */
-}                  /* IE7 */
-
-
 table {
     font-size: 12px;
 }
@@ -146,37 +143,30 @@ pre.filepath {
 }
 
 a:link {
-    color: #346;
     text-decoration: none;
 }
 
 a:visited {
-    color: #0033CC;
     text-decoration: none;
 }
 
 a:focus {
-    color: #0033CC;
     text-decoration: none;
 }
 
 a:hover {
-    color: #346;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 a:active {
-    color: #0033CC;
     text-decoration: none;
 }
 
 .bblink a {
-    color: #0033CC;
     text-decoration: none;
 }
 
 .bblink a:hover {
-    color: #0033CC;
     text-decoration: underline;
 }
 
@@ -536,12 +526,10 @@ a:link .middlethumb,a:visited .middlethumb,a:focus .middlethumb,a:hover .middlet
 }
 
 .topmenu a {
-    color : #0033CC;
     text-decoration : none;
 }
 
 .topmenu a:hover  {
-    color : #0033CC;
     text-decoration : underline;
 }
 
