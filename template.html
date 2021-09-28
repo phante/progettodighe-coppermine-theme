@@ -8,32 +8,19 @@
 	<meta http-equiv="Pragma" content="no-cache">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
     
-        <link rel="apple-touch-icon" sizes="180x180" href="/asset/icon/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/asset/icon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/asset/icon/favicon-16x16.png">
-        <link rel="manifest" href="/asset/icon/site.webmanifest">
-
+        <link rel="icon" href="../main/asset/icon/favicon.ico">
+        <link rel="icon" href="../main/asset/icon/icon.svg" type="image/svg+xml">
+	<link rel="apple-touch-icon" href="../main/asset/icon/apple-touch-icon.png">
+	<link rel="manifest" href="../main/manifest.json">
+	
 	{META}
         <link rel="stylesheet" href="css/coppermine.css" type="text/css">
         <link rel="stylesheet" href="{THEME_DIR}style.css" type="text/css">
         <link rel="stylesheet" href="{THEME_DIR}asset/css/tachyons.css" type="text/css">
 
-	<!-- Preconnessione per ottimizzazione caricamento -->
-	<!-- link rel="preconnect" href="https://www.google-analytics.com" -->
-	<!-- link rel="preconnect" href="https://tpc.googlesyndication.com" -->
-	<!-- link rel="preconnect" href="https://pagead2.googlesyndication.com" -->
-
 	{JAVASCRIPT}
-	<script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script>
+	<!-- script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"></script -->
 	<script async defer data-website-id="c6670ee2-ff59-4347-b4a2-a936f578bcb4" src="https://umami.progettodighe.it/umami.js"></script>
-
-	<!-- Gestione cookie - iubenda -->
-	<script type="text/javascript">
-		var _iub = _iub || [];
-		_iub.csConfiguration = {"gdprAppliesGlobally":false,"countryDetection":true,"consentOnHorizontalScroll":true,"consentOnDocument":true,"perPurposeConsent":true,"enableCMP":true,"googleAdditionalConsentMode":true,"whitelabel":false,"lang":"it","siteId":1759522,"askConsentAtCookiePolicyUpdate":true,"newConsentAtVendorListUpdate":0,"cookiePolicyId":29582500, "banner":{ "acceptButtonDisplay":true,"customizeButtonDisplay":true,"rejectButtonDisplay":true,"position":"bottom" }};
-	</script>
-	<script type="text/javascript" src="//cdn.iubenda.com/cs/tcf/stub-v2.js"></script>
-	<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 </head>
 <body class="w-100 sans-serif bg-white black-80">
     {CUSTOM_HEADER}
@@ -52,12 +39,12 @@
         </div>
 
         <nav class="bt bb tc mt2 mb2">
-            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--dighe" title="Le dighe" href="../main/le-dighe/">Le dighe</a>
-            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--centrali" title="Le centrali" href="../main/le-centrali">Le centrali</a>
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--dighe" title="Le dighe" href="../main/dighe/">Le dighe</a>
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--centrali" title="Le centrali" href="../main/centrali">Le centrali</a>
             <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--tecnica" title="Tecnica" href="../main/tecnica/">Tecnica</a>
             <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--reportage" title="Reportage" href="../main/reportage/">Reportage</a>
-            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--noi" title="Noi" href="../main/noi/">Noi</a>
-            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--risorse" title="Risorse" href="../main/risorse/">Risorse</a>
+            <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--risorse" title="Risorse" href="../main/biblioteca/">Risorse</a>
+	    <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--noi" title="Noi" href="../main/noi/">Noi</a>
             <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--forum" title="Forum" href="../forum">Forum</a>
             <a class="f6 link bg-animate black-80 hover-bg-lightest-blue dib pa3 ph4-l umami--click--gallery" title="Gallery" href="">Gallery</a>
         </nav>
@@ -98,20 +85,44 @@
                 </p>
             </div>
             <div class="db dtc-ns black-70 tc tr-ns v-mid f2">
-                <a class="link near-black hover-silver dib h2 w2 mr3" href="https://www.facebook.com/progettodighe" title="Facebook">
-                    <i class="fab fa-facebook-square"></i>
-                </a>
-                <a class="link hover-silver near-black dib h2 w2 mr3" href="https://www.instagram.com/progettodighe.it/" title="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a class="link hover-silver near-black dib h2 w2 mr3" href="https://www.youtube.com/user/progettodighe" title="youtube">
-                    <i class="fab fa-youtube"></i>
-                </a>
-                <a class="link hover-silver near-black dib h2 w2 mr3" href="#URL_PAGE{backend}" title="RSS">
-                    <i class="fas fa-rss"></i>
-                </a>
+		<a class="link near-black hover-silver dib h2 w2 mr3" href="https://t.me/progettodighe" title="Telegram"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="telegram" class="svg-inline--fa fa-telegram fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path fill="currentColor" d="M248 8C111 8 0 119 0 256s111 248 248 248 248-111 248-248S385 8 248 8zm121.8 169.9l-40.7 191.8c-3 13.6-11.1 16.9-22.4 10.5l-62-45.7-29.9 28.8c-3.3 3.3-6.1 6.1-12.5 6.1l4.4-63.1 114.9-103.8c5-4.4-1.1-6.9-7.7-2.5l-142 89.4-61.2-19.1c-13.3-4.2-13.6-13.3 2.8-19.7l239.1-92.2c11.1-4 20.8 2.7 17.2 19.5z"></path></svg></a>
+                <a class="link near-black hover-silver dib h2 w2 mr3" href="https://www.facebook.com/progettodighe" title="Facebook"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="facebook-square" class="svg-inline--fa fa-facebook-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z"></path></svg></a>
+		<a class="link near-black hover-silver dib h2 w2 mr3" href="https://www.instagram.com/progettodighe.it/" title="Instagram"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="instagram-square" class="svg-inline--fa fa-instagram-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"></path></svg></a>
+		<a class="link near-black hover-silver dib h2 w2 mr3" href="https://www.youtube.com/user/progettodighe" title="youtube"><svg aria-hidden="true" focusable="false" data-prefix="fab" data-icon="youtube-square" class="svg-inline--fa fa-youtube-square fa-w-14" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M186.8 202.1l95.2 54.1-95.2 54.1V202.1zM448 80v352c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V80c0-26.5 21.5-48 48-48h352c26.5 0 48 21.5 48 48zm-42 176.3s0-59.6-7.6-88.2c-4.2-15.8-16.5-28.2-32.2-32.4C337.9 128 224 128 224 128s-113.9 0-142.2 7.7c-15.7 4.2-28 16.6-32.2 32.4-7.6 28.5-7.6 88.2-7.6 88.2s0 59.6 7.6 88.2c4.2 15.8 16.5 27.7 32.2 31.9C110.1 384 224 384 224 384s113.9 0 142.2-7.7c15.7-4.2 28-16.1 32.2-31.9 7.6-28.5 7.6-88.1 7.6-88.1z"></path></svg></a>
             </div>
         </div>	
     </footer>
+	
+    <div class="w-100">
+        <p class="f7 black-70 dib pr3 mb3">
+            <a class="link black-70" rel="license" href="https://fontawesome.com/license/free">Questo sito incorpora icone di Font Awesome Free</a>
+        </p>
+    </div>
+    <div class="w-100">
+        <p class="f7 black-70 dib pr3 mb3">
+            <a class="link black-70" rel="privacy_policy" href="https://www.progettodighe.it/main/privacy.html">Privacy policy</a>
+        </p>
+    </div>
+    <div class="w-100">
+        <p class="f7 black-70 dib pr3 mb3">
+            <a class="link black-70" rel="cookie_policy" href="https://www.progettodighe.it/main/cookie.html">Cookie policy</a>
+        </p>
+    </div>
+    <div class="w-100">
+        <p class="f7 black-70 dib pr3 mb3">
+            <a id="open_preferences_center" class="link black-70" rel="cookie" href="#"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="cookie-bite" class="svg-inline--fa fa-cookie-bite fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M510.52 255.82c-69.97-.85-126.47-57.69-126.47-127.86-70.17 0-127-56.49-127.86-126.45-27.26-4.14-55.13.3-79.72 12.82l-69.13 35.22a132.221 132.221 0 0 0-57.79 57.81l-35.1 68.88a132.645 132.645 0 0 0-12.82 80.95l12.08 76.27a132.521 132.521 0 0 0 37.16 72.96l54.77 54.76a132.036 132.036 0 0 0 72.71 37.06l76.71 12.15c27.51 4.36 55.7-.11 80.53-12.76l69.13-35.21a132.273 132.273 0 0 0 57.79-57.81l35.1-68.88c12.56-24.64 17.01-52.58 12.91-79.91zM176 368c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm32-160c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32zm160 128c-17.67 0-32-14.33-32-32s14.33-32 32-32 32 14.33 32 32-14.33 32-32 32z"></path></svg> Modifica le preferenze sulla gestione dei cookie</a>
+        </p>
+    </div>
+
+    <!-- Cookie Consent by https://www.CookieConsent.com -->
+    <script type="text/javascript" src="//www.cookieconsent.com/releases/4.0.0/cookie-consent.js" charset="UTF-8"></script>
+    <script type="text/javascript" charset="UTF-8">
+    /* global cookieconsent */
+        document.addEventListener('DOMContentLoaded', function () {
+            cookieconsent.run({"notice_banner_type":"simple","consent_type":"express","palette":"dark","language":"it","page_load_consent_levels":["strictly-necessary"],"notice_banner_reject_button_hide":false,"preferences_center_close_button_hide":false,"website_name":"ProgettoDighe"});
+    });
+    </script>
+    <noscript>ePrivacy and GPDR Cookie Consent by <a href="https://www.CookieConsent.com/" rel="nofollow noopener">Cookie Consent</a></noscript>
+    <!-- End Cookie Consent by https://www.CookieConsent.com -->
 </body>
 </html>
