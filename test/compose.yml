@@ -1,0 +1,37 @@
+# Ambiente di test usa-e-getta per il tema. Nessun volume persistente: il
+# database vive in tmpfs e l'installazione si rifà da test/bin/install.sh.
+#
+#   CPG_VERSION=1.6.19 PHP_TAG=8.3-apache podman-compose -f test/compose.yml up --build -d
+#
+# La porta si sposta con CPG_PORT, che va tenuta d'accordo con PD_BASE_URL.
+services:
+  db:
+    image: docker.io/library/mariadb:11
+    environment:
+      MARIADB_ROOT_PASSWORD: cpg
+      MARIADB_DATABASE: cpg
+      MARIADB_USER: cpg
+      MARIADB_PASSWORD: cpg
+    tmpfs:
+      - /var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  cpg:
+    build:
+      context: .
+      dockerfile: Containerfile
+      args:
+        CPG_VERSION: ${CPG_VERSION:-1.6.19}
+        PHP_TAG: ${PHP_TAG:-8.3-apache}
+    ports:
+      - "${CPG_PORT:-8088}:80"
+    volumes:
+      # Il tema è montato dal sorgente: si modifica e si ricarica, senza rebuild.
+      - ../:/var/www/html/themes/progettodighe:ro,z
+    depends_on:
+      db:
+        condition: service_healthy

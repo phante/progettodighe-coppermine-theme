@@ -1,0 +1,22 @@
+ARG PHP_TAG=8.3-apache
+FROM docker.io/library/php:${PHP_TAG}
+
+ARG CPG_VERSION=1.6.19
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libfreetype6-dev libjpeg62-turbo-dev libpng-dev default-mysql-client \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j"$(nproc)" gd mysqli \
+    && rm -rf /var/lib/apt/lists/*
+
+# Il tarball di GitHub scompatta in cpg1.6.x-<version>/, da cui prendiamo solo
+# il contenuto: Coppermine vuole stare nella document root.
+ADD https://github.com/coppermine-gallery/cpg1.6.x/archive/refs/tags/v${CPG_VERSION}.tar.gz /tmp/cpg.tar.gz
+RUN tar -xzf /tmp/cpg.tar.gz -C /tmp \
+    && cp -a /tmp/cpg1.6.x-${CPG_VERSION}/. /var/www/html/ \
+    && rm -rf /tmp/cpg.tar.gz /tmp/cpg1.6.x-${CPG_VERSION} \
+    && chown -R www-data:www-data /var/www/html
+
+# ponytail: ambiente usa-e-getta, 777 sulle directory scrivibili invece di
+# inseguire gli uid del bind-mount di podman.
+RUN chmod 777 /var/www/html/albums /var/www/html/include /var/www/html/userpics 2>/dev/null || true

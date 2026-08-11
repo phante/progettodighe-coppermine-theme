@@ -1,0 +1,18 @@
+{
+  "name": "progettodighe-coppermine-theme",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Tema Coppermine di ProgettoDighe",
+  "scripts": {
+    "env:up": "podman-compose -f test/compose.yml up --build -d && test/bin/install.sh",
+    "env:down": "podman-compose -f test/compose.yml down -v",
+    "test": "node --test \"test/*.test.js\"",
+    "test:e2e": "playwright test",
+    "test:e2e:ci": "podman run --rm -e CI=1 --network host -v \"$PWD\":/work:z -w /work mcr.microsoft.com/playwright:v1.62.1-noble npx playwright test",
+    "test:matrix": "test/bin/matrix.sh"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.62.1"
+  }
+}

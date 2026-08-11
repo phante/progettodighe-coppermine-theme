@@ -1,0 +1,5 @@
+# <versione coppermine> <tag immagine php>
+# La prima riga riproduce la produzione, le altre sono i salti di versione da
+# verificare prima di farli sul server.
+1.6.19 8.3-apache
+1.6.29 8.3-apache

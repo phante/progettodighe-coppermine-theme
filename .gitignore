@@ -1,0 +1,9 @@
+node_modules/
+package-lock.json
+test-results/
+playwright-report/
+# Strumenti locali di sviluppo: non fanno parte del tema.
+.serena/
+.claude/
+.headroom/
+.DS_Store
