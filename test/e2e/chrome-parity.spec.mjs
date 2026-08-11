@@ -32,7 +32,7 @@ test.describe("parità con il sito principale", () => {
 
   for (const [nome, tag, selettore] of casi) {
     test(`${nome}: stesse classi Tachyons`, async ({ page }) => {
-      await page.goto("/index.php");
+      await page.goto("index.php");
       const rese = ((await page.locator(selettore).first().getAttribute("class")) || "")
         .split(/\s+/)
         .filter(Boolean);
@@ -50,7 +50,7 @@ test.describe("parità con il sito principale", () => {
     expect(m, "link di menu non trovato in baseof.html").not.toBeNull();
     const attese = m[1].split(/\s+/).filter(Boolean);
 
-    await page.goto("/index.php");
+    await page.goto("index.php");
     const link = page.locator("header nav.bt a");
     for (let i = 0; i < (await link.count()); i++) {
       const rese = ((await link.nth(i).getAttribute("class")) || "").split(/\s+/);

@@ -26,10 +26,14 @@ export const SITO_PRESENTE = existsSync(resolve(SITO, "themes/progettodighe/layo
 const ALBUM = process.env.PD_ALBUM || "1";
 const PID = process.env.PD_PID || "1";
 
+// Path relativi, senza barra iniziale: la gallery vive sotto /gallery/ e con
+// "/index.php" il browser risolve dalla radice, cioè sul sito principale.
+// L'header è lo stesso, quindi i test passerebbero senza aver mai visto la
+// gallery — che è il modo peggiore di essere verdi.
 export const PAGINE = [
-  ["indice", "/index.php"],
-  ["album", `/thumbnails.php?album=${ALBUM}`],
-  ["foto", `/displayimage.php?pid=${PID}`],
+  ["indice", "index.php"],
+  ["album", `thumbnails.php?album=${ALBUM}`],
+  ["foto", `displayimage.php?pid=${PID}`],
 ];
 
 /** Le voci di nav attese, nell'ordine del menu del sito principale. */
