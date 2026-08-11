@@ -28,3 +28,27 @@ for (const [nome, url] of PAGINE) {
     expect(rotte, `sottorisorse in errore su ${nome}`).toEqual([]);
   });
 }
+
+// Il test qui sopra vede solo ciò che il browser scarica davvero, e il
+// <link rel="manifest"> non è fra quelle cose: ha continuato a puntare a un
+// manifest.json che il sito non genera più, con la correzione fatta a mano
+// nella sola produzione. Qui i link dell'head si chiedono uno per uno.
+//
+// Solo contro un'istanza vera: puntano al sito principale, quindi in un
+// ambiente senza rete fallirebbero per il motivo sbagliato.
+test("i link dell'head rispondono", async ({ page, request }) => {
+  test.skip(!process.env.PD_BASE_URL, "serve un'istanza raggiungibile");
+
+  await page.goto("index.php");
+  const href = await page
+    .locator("head link[href]")
+    .evaluateAll((link) => link.map((l) => l.href));
+
+  const rotte = [];
+  for (const url of href) {
+    const res = await request.get(url);
+    if (!res.ok()) rotte.push(`${res.status()} ${url}`);
+  }
+
+  expect(rotte, "link dell'head in errore").toEqual([]);
+});
