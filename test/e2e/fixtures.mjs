@@ -14,11 +14,22 @@ export const REPO = resolve(qui, "../..");
 export const SITO = resolve(REPO, "../progettodighe");
 export const SITO_PRESENTE = existsSync(resolve(SITO, "themes/progettodighe/layouts/baseof.html"));
 
-/** Le pagine su cui la scocca va verificata: indice, album, foto singola. */
+/**
+ * Le pagine su cui la scocca va verificata: indice, album, foto singola.
+ *
+ * Gli id sono quelli seminati da test/bin/install.sh. Contro una gallery vera
+ * (dev, produzione) vanno dati quelli che esistono davvero, altrimenti Coppermine
+ * risponde con la pagina di errore e i test falliscono per il motivo sbagliato:
+ *
+ *   PD_ALBUM=12 PD_PID=345 npm run test:e2e:dev
+ */
+const ALBUM = process.env.PD_ALBUM || "1";
+const PID = process.env.PD_PID || "1";
+
 export const PAGINE = [
   ["indice", "/index.php"],
-  ["album", "/thumbnails.php?album=1"],
-  ["foto", "/displayimage.php?pid=1"],
+  ["album", `/thumbnails.php?album=${ALBUM}`],
+  ["foto", `/displayimage.php?pid=${PID}`],
 ];
 
 /** Le voci di nav attese, nell'ordine del menu del sito principale. */

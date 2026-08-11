@@ -39,7 +39,7 @@ Serve [podman](https://podman.io/) con `podman-compose`, e Node 22+.
 ```sh
 npm install
 npm run env:up      # scarica Coppermine, avvia mariadb + apache, installa e semina
-npm run test:e2e    # la suite contro http://127.0.0.1:8080
+npm run test:e2e    # la suite contro http://127.0.0.1:8088
 npm run env:down
 ```
 
@@ -60,7 +60,8 @@ matrice deve poter muovere.
 - `test/e2e/no-404.spec.mjs` — nessuna sottorisorsa in errore
 - `test/e2e/chrome-parity.spec.mjs` — le classi Tachyons di header/nav/footer combaciano con quelle di `baseof.html` del sito principale
 
-Gli ultimi due si saltano da soli se `../progettodighe` non è clonato accanto.
+I due test di parità (`asset-parity`, `chrome-parity`) si saltano da soli se
+`../progettodighe` non è clonato accanto.
 
 ### Cambiare versione di Coppermine
 
@@ -75,3 +76,46 @@ server. Una riga che fallisce non ferma le altre.
 
 Prima di pubblicare su `dev.progettodighe.it`: `npm test`, `npm run test:e2e` e
 `npm run test:matrix` verdi.
+
+## Pubblicazione
+
+Pubblica Ansible, dal repo `progettodighe-server`, insieme al resto della
+gallery: il tema è uno dei passi dell'aggiornamento di Coppermine, non un
+meccanismo a parte che potrebbe scavalcarlo.
+
+Un solo branch, `main`. A distinguere gli ambienti è una variabile:
+
+| Ambiente | `..._gallery_theme_version` | Destinazione |
+|---|---|---|
+| dev | `main` | `https://dev.progettodighe.it/gallery/` |
+| produzione | un tag, es. `26.08` | `https://www.progettodighe.it/gallery/` |
+
+Il tema è statico, quindi non c'è niente da costruire: Ansible clona il repo in
+una directory temporanea, ne fa `rsync` nella webroot escludendo quello elencato
+in `.deployignore`, e poi la butta via. Così la `.git` non entra mai nella
+directory servita da nginx.
+
+I tag sono annotati e dicono con quali versioni di Coppermine il commit è stato
+provato:
+
+```sh
+git tag -a 26.08 -m "Testato con Coppermine 1.6.19 e 1.6.29 su PHP 8.3"
+git tag -n99
+```
+
+Non è una dichiarazione di intenti: è il riepilogo di `npm run test:matrix` su
+`test/versions.txt`, che in quel commit dice le stesse versioni.
+
+Dopo aver pubblicato su dev, i test contro il sito vero:
+
+```sh
+npm run test:e2e:dev
+PD_ALBUM=12 PD_PID=345 npm run test:e2e:prod
+```
+
+`PD_ALBUM` e `PD_PID` servono perché gli id predefiniti sono quelli seminati
+nell'ambiente locale: su una gallery vera vanno indicati un album e una foto che
+esistono davvero.
+
+Il clone di dev da produzione (`clone_dev_gallery` negli Ansible) esclude
+`themes/progettodighe/`, altrimenti riporterebbe su dev il tema di produzione.
