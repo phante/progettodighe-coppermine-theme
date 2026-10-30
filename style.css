@@ -462,6 +462,10 @@ a:link .middlethumb,a:visited .middlethumb,a:focus .middlethumb,a:hover .middlet
     padding: 5px;
 }
 
+.footer-sfumato {
+    background-image: linear-gradient(#ffffff, rgb(200, 200, 200));
+}
+
 .footer {
     font-size : 9px;
 }
